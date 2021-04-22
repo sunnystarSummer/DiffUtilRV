@@ -13,6 +13,11 @@ class EmployeeRecyclerViewAdapter :
         runnable.run()
     }
 
+    fun sort2(sort: EmployeeSort?) {
+        Collections.sort(list, sort)
+        notifyDataSetChanged()
+    }
+
     override fun setOnBindViewHolder(holder: ViewHolder, position: Int, data: Employee) {
         holder.name.text = data.name
         holder.role.text = data.role
